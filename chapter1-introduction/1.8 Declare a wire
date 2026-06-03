@@ -1,0 +1,31 @@
+module top(
+    input ravi,
+    input priya,
+    output out
+);
+    // declare internal wires
+    wire w1, w2, w3;
+
+    // instantiate the four security modules
+    approval u1 (.p(ravi), .q(priya), .r(w1));   // AND gate
+    confirm  u2 (.s(ravi), .t(priya), .u(w2));   // OR gate
+    override u3 (.s(w1),   .t(w2),    .u(w3));   // XOR gate
+    unlock   u4 (.s(w3),   .t(priya), .u(out));  // NOR gate
+endmodule
+
+// Sub-modules
+module approval(input p, input q, output r);
+    assign r = p & q;   // both guards press together
+endmodule
+
+module confirm(input s, input t, output u);
+    assign u = s | t;   // at least one guard pressed
+endmodule
+
+module override(input s, input t, output u);
+    assign u = s ^ t;   // trigger when results differ
+endmodule
+
+module unlock(input s, input t, output u);
+    assign u = ~(s & t); // reverse decision when both active
+endmodule
