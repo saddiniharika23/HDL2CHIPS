@@ -1,0 +1,10 @@
+module top(
+    input a,
+    input b,
+    output out
+);
+     or_gate u1 (
+        .x(a),    
+        .y(b),    
+         .z(out) );
+endmodule
