@@ -1,0 +1,13 @@
+module top(
+    input  [15:0] meera,
+    input  [15:0] raj,
+    output out
+);
+    wire [7:0] y1;
+    wire [7:0] y2;
+    
+    assign y1=meera[15:8];
+    assign y2=raj[7:0];
+    
+    assign out =y1[3]&y2[4];
+endmodule
