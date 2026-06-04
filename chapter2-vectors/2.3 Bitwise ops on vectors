@@ -1,0 +1,14 @@
+module top(
+    input  [7:0] meera,
+    input  [7:0] raj,
+    output echo,
+    output river
+);
+
+    // Echo: 1 if any matching channel has both bits = 1
+    assign echo = |(meera & raj);
+
+    // River: 1 if both vectors are non-zero
+    assign river = (|meera) && (|raj);
+
+endmodule
