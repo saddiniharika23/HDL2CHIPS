@@ -1,0 +1,7 @@
+module top(
+    input [1:0] meera,
+    input [1:0] raj,
+    output [7:0] lake
+);
+    assign lake = {meera,2'b00,raj,2'b00} ; 
+endmodule
