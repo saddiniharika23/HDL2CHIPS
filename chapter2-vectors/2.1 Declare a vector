@@ -1,0 +1,12 @@
+module top(
+    input  [7:0] meera,
+    input  [7:0] raj,
+    output [7:0] safe,
+    output [7:0] watch
+);
+    wire [7:0] consensus;//declare a wire 
+    assign consensus = meera & raj; //as per ckt place the inputs
+    assign safe =consensus;
+    assign watch=consensus^raj;
+    
+endmodule
