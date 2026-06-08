@@ -1,0 +1,24 @@
+module bit_shuffle (
+    input  [3:0] in,
+    output [3:0] out
+);
+   
+    assign out = {in[1:0], in[3:2]};
+endmodule
+
+module top_module (
+    input  [3:0] meera,
+    input  [3:0] raj,
+    output [7:0] scrambled
+);
+    wire [3:0] meera_shuffled;
+    wire [3:0] raj_shuffled;
+    
+
+    bit_shuffle meera_shuffle (.in(meera), .out(meera_shuffled));
+    bit_shuffle raj_shuffle (.in(raj), .out(raj_shuffled));
+    
+    
+    assign scrambled = {meera_shuffled[1:0], raj_shuffled[3:2], 
+                        meera_shuffled[3:2], raj_shuffled[1:0]};
+endmodule
