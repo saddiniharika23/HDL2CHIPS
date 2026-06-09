@@ -1,0 +1,7 @@
+module top(
+    input [7:0] river,
+    output [7:0] shifted
+);
+    assign shifted=river<<2;
+    
+endmodule
