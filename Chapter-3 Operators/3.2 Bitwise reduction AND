@@ -1,0 +1,7 @@
+module top(
+    input [7:0] forest,
+    output ripe
+);
+   assign ripe=&forest;
+    
+endmodule
