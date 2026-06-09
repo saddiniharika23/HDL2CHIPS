@@ -1,0 +1,21 @@
+module top(
+    input signed [3:0] temp1,
+    input signed [3:0] temp2,
+    input signed [3:0] temp3,
+    output signed [3:0] coldest,
+    output signed [3:0] mildest,
+    output signed [3:0] hottest
+);
+  assign coldest = (temp1 <= temp2 && temp1 <= temp3) ? temp1 :
+                 (temp2 <= temp3) ? temp2 : temp3;
+
+assign hottest = (temp1 >= temp2 && temp1 >= temp3) ? temp1 :
+                 (temp2 >= temp3) ? temp2 : temp3;
+
+assign mildest = (temp1 != coldest && temp1 != hottest) ? temp1 :
+                 (temp2 != coldest && temp2 != hottest) ? temp2 :
+                                                          temp3;
+                                                             
+
+    
+endmodule
