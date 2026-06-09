@@ -1,0 +1,7 @@
+module top(
+    input [7:0] lake,
+    output [7:0] shifted
+);
+    // Write your code here
+    assign shifted=lake>>3;
+endmodule
