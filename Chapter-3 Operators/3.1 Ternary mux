@@ -1,0 +1,9 @@
+module top(
+    input sel,
+    input a,
+    input b,
+    output out
+);
+    assign out=sel ? a : b; 
+    
+endmodule
