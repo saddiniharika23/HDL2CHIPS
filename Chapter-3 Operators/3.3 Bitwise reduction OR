@@ -1,0 +1,7 @@
+module top(
+    input [7:0] mountain,
+    output ring
+);
+   assign ring =|mountain;
+    
+endmodule
