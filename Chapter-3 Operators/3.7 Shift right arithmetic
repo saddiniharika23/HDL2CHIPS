@@ -1,0 +1,7 @@
+module top(
+    input signed [7:0] in,
+    output signed [7:0] out
+);
+    assign out=in>>>2;
+    
+endmodule
