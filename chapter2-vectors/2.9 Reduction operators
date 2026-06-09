@@ -1,0 +1,9 @@
+module top(
+    input [3:0] iris,
+    output flat,
+    output nope
+);
+ 
+    assign flat=&iris | ~|iris;
+    assign nope=~|iris;
+endmodule
