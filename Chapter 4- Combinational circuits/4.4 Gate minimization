@@ -1,0 +1,9 @@
+module top(
+    input alex,
+    input blake,
+    input casey,
+    output pass
+);
+    // Implement the minimized expression here
+    assign pass= ~blake & ~casey ;
+endmodule
