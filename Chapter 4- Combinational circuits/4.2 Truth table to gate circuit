@@ -1,0 +1,7 @@
+module top(
+    input [2:0] iris,
+    output alert
+);
+    assign alert =~iris[2]& ~iris[1]& ~iris[0] ;
+    
+endmodule
