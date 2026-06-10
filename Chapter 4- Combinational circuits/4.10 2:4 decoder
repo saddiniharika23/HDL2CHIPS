@@ -1,0 +1,7 @@
+module top(
+    input [3:0] in,
+    output [15:0] out
+);
+    assign out = {{12{in[0]}}, in[0], in[1], in[2], in[3]};
+    
+endmodule
