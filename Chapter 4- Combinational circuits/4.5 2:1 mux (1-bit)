@@ -1,0 +1,9 @@
+module top(
+    input lever,
+    input oak,
+    input pine,
+    output route
+);
+    // Write your code here
+   assign route = lever ? oak : pine; 
+endmodule
