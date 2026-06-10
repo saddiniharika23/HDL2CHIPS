@@ -1,0 +1,16 @@
+module top(
+    input [1:0] sel,
+    input [3:0] in,
+    output out
+);
+    // Declare wires for the first stage multiplexer outputs
+    wire w1,w2;
+    
+    // Stage 1: Select between input pairs using LSB sel[0]
+    
+    assign  w1= sel[0]?in[1]:in[0] ;
+    assign w2 =sel[0]?in[3]:in[2];
+    // Stage 2: Select final output using MSB sel[1]
+    assign out =sel[1]? w1 : w2;
+    
+endmodule
