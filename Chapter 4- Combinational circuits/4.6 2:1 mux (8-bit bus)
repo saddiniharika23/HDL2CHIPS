@@ -1,0 +1,9 @@
+module top(
+    input switch,
+    input [7:0] alice,
+    input [7:0] bob,
+    output [7:0] result
+);
+   assign result =switch?alice:bob;
+    
+endmodule
