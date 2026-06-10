@@ -1,0 +1,46 @@
+module top(
+    input dhoni,
+    input kohli,
+    input sachin,
+    input rohit,
+    output openersScored,
+    output openerUpset,
+    output middleScored,
+    output middleUpset,
+    output bothScored,
+    output allScored,
+    output anyScored,
+    output noneScored,
+    output notAllScored,
+    output anyUpset,
+    output pairsSame
+);
+
+    wire w1, w2, w3, w4, w5, w6;
+
+    assign openersScored = dhoni | kohli;
+    assign openerUpset   = (~dhoni) & kohli;
+
+    assign middleScored  = sachin | rohit;
+    assign middleUpset   = (~sachin) & rohit;
+
+    assign bothScored    = openersScored & middleScored;
+
+    assign w1 = dhoni & kohli;
+    assign w2 = sachin & rohit;
+    assign allScored = w1 & w2;
+
+    assign w3 = dhoni | kohli;
+    assign w4 = sachin | rohit;
+    assign anyScored = w3 | w4;
+
+    assign noneScored = ~anyScored;
+    assign notAllScored = ~allScored;
+
+    assign anyUpset = openerUpset | middleUpset;
+
+    assign w5 = dhoni ~^ kohli;   // XNOR
+    assign w6 = sachin ~^ rohit;    // XNOR
+    assign pairsSame = w5 & w6;
+
+endmodule
