@@ -1,0 +1,15 @@
+module top(
+    input alice,
+    input bob,
+    input eve,
+    input max,
+    output alarm
+);
+    // Declare wires for first-level AND results
+    wire w1,w2;
+    // First level: AND each zone pair
+    assign w1=alice & bob;
+    assign w2 =eve & max;
+    // Second level: OR the zone results
+    assign alarm = w1|w2;
+endmodule
