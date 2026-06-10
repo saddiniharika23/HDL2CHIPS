@@ -1,0 +1,8 @@
+module top(
+    input [2:0] sel,
+    input [7:0] in,
+    output out
+);
+    assign out = sel[0]?in[7]:in[0];
+    
+endmodule
