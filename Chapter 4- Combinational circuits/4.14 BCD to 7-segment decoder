@@ -1,0 +1,13 @@
+module top(
+    input [3:0] in,
+    output reg [6:0] seg
+);
+    // Write your code here
+    always @ (*) begin
+        case(in)
+            4'd0:seg=7'b0111111;
+            4'd5:seg=7'b1101101;
+            default:seg=7'b1101111;
+        endcase
+    end
+endmodule
