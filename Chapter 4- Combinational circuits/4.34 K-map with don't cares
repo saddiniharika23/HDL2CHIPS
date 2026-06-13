@@ -1,0 +1,7 @@
+module top(
+    input [3:0] in,
+    output out
+);
+    // Write your code here
+    assign out =in[3] & (in[2] | in[1]);
+endmodule
