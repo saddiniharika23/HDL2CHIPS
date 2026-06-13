@@ -1,0 +1,14 @@
+module top(
+    input a,
+    input b,
+    output reg out
+);
+    // Write your code here
+    always @(*) begin
+        case (a)
+        2'b00: out = a;
+        2'b01: out = b;
+        // Missing 2'b10, 2'b11, and default!
+    endcase
+end
+endmodule
