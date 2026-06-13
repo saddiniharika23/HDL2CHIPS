@@ -1,0 +1,10 @@
+module top(
+    input a,
+    input b,
+    output reg out
+);
+    // Write your code here
+    always @(*) begin
+    out = a & b;
+end
+endmodule
