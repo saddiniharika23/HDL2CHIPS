@@ -1,0 +1,54 @@
+module top(
+    input [15:0] a,
+    input [15:0] b,
+    input cin,
+    output [15:0] sum,
+    output cout
+);
+    // Write your code here
+    wire c1,c2,c3;
+    top_bcd_cell u0(
+        a[3:0], b[3:0], cin,
+        sum[3:0], c1);
+        top_bcd_cell u1(
+            a[7:4], b[7:4], c1,
+            sum[7:4], c2);
+            top_bcd_cell u2(
+                a[11:8], b[11:8], c2,
+                sum[11:8], c3);
+                top_bcd_cell u3(
+                    a[15:12], b[15:12], c3,
+                    sum[15:12], cout);
+                endmodule
+
+// Helper BCD 1-digit module
+module top_bcd_cell(
+    input [3:0] a,
+    input [3:0] b,
+    input cin,
+    output reg [3:0] sum,
+    output reg cout
+);
+    // Write your BCD cell logic here
+   
+ 
+
+    reg [4:0] temp;
+
+    always @(*) begin
+        temp = a + b + cin;
+
+        if (temp > 9) begin
+            temp = temp + 6;
+            cout = 1;
+        end
+        else
+            cout = 0;
+
+        sum = temp[3:0];
+    end
+
+
+    
+
+endmodule
