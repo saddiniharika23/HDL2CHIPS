@@ -1,0 +1,15 @@
+module top(
+    input [3:0] in,
+    output reg out
+);
+    // Write your code here
+    always @(*) begin
+    casez (in)
+        4'b1000: out = 1;   // Highest priority: MSB = 1
+        4'b0100: out = 1;   // Next: bit 3 = 0, bit 2 = 1
+        4'b0010: out = 1;   // Next: bits 3-2 = 00, bit 1 = 1
+        4'b0001: out = 1;   // Next: only LSB = 1
+        default: out = 0;   // Catch-all: no bits set
+    endcase
+end
+endmodule
