@@ -1,0 +1,19 @@
+module top(
+    input [1:0] a,
+    input [1:0] b,
+    output reg out
+);
+    // Write your code here
+   
+       always @(*) begin
+    if (a[1] > b[1])           // Compare MSBs first
+        out = 1;
+    else if (a[1] == b[1])     // MSBs equal, check LSBs
+        if (a[0] > b[0])
+            out = 1;
+        else
+            out = 0;
+else
+        out = 0;
+end
+endmodule
