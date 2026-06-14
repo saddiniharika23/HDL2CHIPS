@@ -1,0 +1,14 @@
+module top(
+    input a,
+    input b,
+    input c,
+    output reg out
+);
+
+always @(*) begin
+    out = 0;
+    if ((a && b) || (b && c))
+        out = 1;
+end
+
+endmodule
