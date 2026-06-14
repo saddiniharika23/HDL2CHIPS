@@ -1,0 +1,16 @@
+module top(
+    input [3:0] in,
+    output reg out
+);
+    // Write your code here
+  
+
+always @(*) begin
+    casex (in)
+        4'b1???: out = 1'b1;
+        default: out = 1'b0;
+    endcase
+end
+
+
+endmodule
