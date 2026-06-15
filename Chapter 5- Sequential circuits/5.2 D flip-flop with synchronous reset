@@ -1,0 +1,16 @@
+module top(
+    input clk,
+    input rst,
+    input d,
+    output reg q
+);
+    // Write your code here
+    initial
+    q = 1'b0;
+    always @(posedge clk ) begin
+    if (rst)
+        q <= 0;
+    else
+        q <= d;
+end
+endmodule
