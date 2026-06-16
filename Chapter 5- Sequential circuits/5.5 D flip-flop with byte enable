@@ -1,0 +1,22 @@
+module top(
+    input clk,
+    input [3:0] byteena,
+    input [31:0] d,
+    output reg [31:0] q
+);
+    // Write your code here
+    always @(posedge clk)begin
+        
+        if(byteena[0])
+           q[7:0]   <= d[7:0];
+
+    if (byteena[1])
+        q[15:8]  <= d[15:8];
+
+    if (byteena[2])
+        q[23:16] <= d[23:16];
+
+    if (byteena[3])
+        q[31:24] <= d[31:24];
+end           
+endmodule
