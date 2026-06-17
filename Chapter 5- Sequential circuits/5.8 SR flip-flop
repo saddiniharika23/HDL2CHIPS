@@ -1,0 +1,15 @@
+module top(
+    input clk,
+    input s,
+    input r,
+    output reg q
+);
+    initial q = 0; // Initialize to known state
+    // Write your code here
+    always@(posedge clk)begin
+    if (s)
+        q <= 1;   // S checked first — S has priority
+else if (r) 
+    q <= 0;
+    end
+endmodule
