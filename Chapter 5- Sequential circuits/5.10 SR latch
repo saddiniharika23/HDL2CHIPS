@@ -1,0 +1,15 @@
+module top(
+    input s,
+    input r,
+    output reg q
+);
+    // Write your code here
+    always@(*) begin
+        if(s)
+            q=1'b1;
+       else if(r)
+            q=1'b0;
+        else
+            q=q;
+    end
+endmodule
