@@ -1,0 +1,14 @@
+module top(
+    input clk,
+    input in,
+    output reg out
+);
+
+    reg in_prev;
+
+    always @(posedge clk) begin
+        out <= (~in) & in_prev;  // Detect 1 -> 0 transition
+        in_prev <= in;           // Update previous value
+    end
+
+endmodule
