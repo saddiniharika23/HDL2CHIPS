@@ -1,0 +1,19 @@
+module top(
+    input clk,
+    input in,
+    output reg out
+);
+
+    reg in_prev;
+
+    initial begin
+        in_prev = 1'b0;
+        out = 1'b0;
+    end
+
+    always @(posedge clk) begin
+        out <= in ^ in_prev;
+        in_prev <= in;
+    end
+
+endmodule
