@@ -1,0 +1,19 @@
+module top(
+    input clk,
+    input in,
+    input capture,
+    output reg q
+);
+
+    initial q = 0;    // Initialize to known state
+
+    always @(posedge clk) begin
+        if (capture)
+            q <= in;   // Capture has highest priority
+        else if (in)
+            q <= 1'b1; // Capture the edge and latch it
+        else
+            q <= q;    // Hold previous value
+    end
+
+endmodule
